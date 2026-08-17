@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Club of Kathmandu Samakhusi - Making a Difference</title>
+    <meta name="description" content="Leo Club of Kathmandu Samakhusi is a dynamic youth organization under Lions Club International, dedicated to community service and leadership development.">
+    <meta name="keywords" content="Leo Club, Kathmandu, Samakhusi, Community Service, Youth Organization, Lions Club">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,900,800" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/static/site/css/leo-club.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/site/css/leo-hero-slider.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/site/leo-club-logo.png" rel="shortcut icon"/>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+    <div class="container-fluid">
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
+                <div class="club-title">
+                    <h1>Leo Club Kathmandu Samakhusi</h1>
+                    <p>District 325 B1, Nepal</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/events/">Events</a></li>
+                    <li><a href="/join/">Get Involved</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+    <a href="{% url 'membership_application' %}"
+       style="background: #ffc107; color: #003d82; padding: 8px 15px; border-radius: 5px; font-weight: 600;">
+        Apply Now
+    </a>
+</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HERO SLIDER ============ -->
+<section id="home" class="leo-hero-slider" aria-label="Leo Club highlights">
+    <div class="leo-slider-loader" aria-hidden="true">
+        <div class="leo-loader-ring"></div>
+        <img src="/static/site/images/leo-club-logo.png" alt="">
+    </div>
+
+    <div class="leo-slides">
+        <article class="leo-slide is-active" data-slide="0">
+            <div class="leo-slide-art leo-art-community"></div>
+            <div class="leo-slide-overlay"></div>
+            <div class="leo-slide-content">
+                <span class="leo-eyebrow"><span></span> LEO CLUB • KATHMANDU SAMAKHUSI</span>
+                <h2>Lead. Serve.<br><strong>Inspire.</strong></h2>
+                <p>Young leaders creating real change through service, friendship and action.</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary">Discover Our Club</a>
+                    <a href="/join/" class="btn btn-secondary">Join the Movement</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="leo-slide" data-slide="1">
+            <div class="leo-slide-art leo-art-service"></div>
+            <div class="leo-slide-overlay"></div>
+            <div class="leo-slide-content">
+                <span class="leo-eyebrow"><span></span> SERVICE WITH PURPOSE</span>
+                <h2>Small Actions.<br><strong>Big Impact.</strong></h2>
+                <p>From community projects to meaningful campaigns, we turn ideas into positive change.</p>
+                <div class="cta-buttons">
+                    <a href="/events/" class="btn btn-primary">Explore Events</a>
+                    <a href="#contact" class="btn btn-secondary">Work With Us</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="leo-slide" data-slide="2">
+            <div class="leo-slide-art leo-art-leadership"></div>
+            <div class="leo-slide-overlay"></div>
+            <div class="leo-slide-content">
+                <span class="leo-eyebrow"><span></span> YOUTH • LEADERSHIP • FRIENDSHIP</span>
+                <h2>Build The<br><strong>Next Generation.</strong></h2>
+                <p>Grow your confidence, find your people and become the leader your community needs.</p>
+                <div class="cta-buttons">
+                    <a href="/join/" class="btn btn-primary">Get Involved</a>
+                    <a href="#about" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <button class="leo-slider-arrow leo-slider-prev" type="button" aria-label="Previous slide">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button class="leo-slider-arrow leo-slider-next" type="button" aria-label="Next slide">
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <div class="leo-slider-controls">
+        <div class="leo-slider-dots" role="tablist" aria-label="Hero slides">
+            <button class="is-active" type="button" role="tab" aria-label="Go to slide 1" aria-selected="true"><span></span></button>
+            <button type="button" role="tab" aria-label="Go to slide 2" aria-selected="false"><span></span></button>
+            <button type="button" role="tab" aria-label="Go to slide 3" aria-selected="false"><span></span></button>
+        </div>
+        <div class="leo-slide-count"><strong>01</strong><span>/ 03</span></div>
+    </div>
+
+    <div class="leo-slider-progress"><span></span></div>
+    <a class="leo-scroll-cue" href="#about" aria-label="Scroll to About section">
+        <span>SCROLL TO EXPLORE</span><i class="fa-solid fa-arrow-down"></i>
+    </a>
+</section>
+
+
+<!-- ============ ABOUT SECTION ============ -->
+<section id="about">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>About Leo Club</h2>
+            <p>Who We Are and What We Stand For</p>
+        </div>
+        
+        <div class="about-container">
+            <div class="about-content">
+                <h3>Our Story</h3>
+                <p>Leo Club of Kathmandu Samakhusi is part of the largest youth-led organization in the world, operating under the umbrella of Lions Club International. Founded on the principles of service, leadership, and community engagement, we are committed to creating meaningful change in Kathmandu and beyond.</p>
+                
+                <p>Our club brings together young professionals, students, and community leaders who share a passion for making a difference. Through various humanitarian projects, educational initiatives, and community programs, we strive to improve the quality of life for those in need.</p>
+                
+                <ul class="about-features">
+                    <li><strong>Community Service:</strong> Engaging in meaningful projects that benefit our community</li>
+                    <li><strong>Leadership Development:</strong> Nurturing the next generation of leaders</li>
+                    <li><strong>Youth Empowerment:</strong> Creating opportunities for young people to grow</li>
+                    <li><strong>Global Network:</strong> Connected with thousands of Leo clubs worldwide</li>
+                    <li><strong>Cultural Exchange:</strong> Promoting understanding and friendship across cultures</li>
+                </ul>
+            </div>
+            
+            <div class="about-image">
+                <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                    <i class="fas fa-handshake"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ VALUES SECTION ============ -->
+<section id="values">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Our Mission & Values</h2>
+            <p>The Pillars of Our Organization</p>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Service</h3>
+                <p>We are dedicated to serving our community with compassion, integrity, and excellence in all we do.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Friendship</h3>
+                <p>We build strong bonds of friendship and camaraderie among our members and with communities worldwide.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Leadership</h3>
+                <p>We develop future leaders through mentorship, training, and real-world experience in service projects.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Unity</h3>
+                <p>We work together as one global family, united in our commitment to making the world a better place.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Growth</h3>
+                <p>We embrace continuous learning and personal development to become better versions of ourselves.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Excellence</h3>
+                <p>We strive for excellence in everything we undertake, setting high standards for ourselves and others.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ EVENTS SECTION ============ -->
+<section id="events">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Upcoming Events</h2>
+            <p>Join Us in Making a Difference</p>
+        </div>
+        
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">September 15</span>
+                    <h3>Environmental Cleanup Drive</h3>
+                    <p>Join us as we clean and beautify the Samakhusi area, promoting environmental awareness and community pride.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">September 22</span>
+                    <h3>Educational Scholarship Program</h3>
+                    <p>Distribution of scholarships to deserving students and mentoring sessions with professionals in various fields.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">October 1</span>
+                    <h3>Health Awareness Campaign</h3>
+                    <p>Free health checkups, medical consultations, and awareness sessions on preventive health measures.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-people-carry"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">October 10</span>
+                    <h3>Community Outreach Program</h3>
+                    <p>Supporting vulnerable communities with essential supplies and mentoring programs for youth development.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-laugh-beam"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">October 18</span>
+                    <h3>Fun & Fellowship Event</h3>
+                    <p>Team building activities, games, and cultural celebrations to strengthen bonds among our club members.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="event-content">
+                    <span class="event-date">October 25</span>
+                    <h3>Heritage Preservation Drive</h3>
+                    <p>Restoration and maintenance of historical sites in Kathmandu, preserving our cultural heritage for future generations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ MEMBERS SECTION ============ -->
+<section id="members">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Our 2026–27 Club Team</h2>
+            <p>32 members. One team. One purpose — service, leadership and friendship.</p>
+        </div>
+
+        <div class="members-summary">
+            <span><strong>32</strong> Members</span>
+            <span><strong>12</strong> Leadership Roles</span>
+            <span>Leo Club Kathmandu Samakhusi</span>
+        </div>
+
+        <div class="members-grid members-grid-large">
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-tie"></i></div>
+                <div class="member-info">
+                    <span class="member-number">01</span>
+                    <h3> Leo Abiskar K.C.</h3>
+                    <div class="member-position">President</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-tie"></i></div>
+                <div class="member-info">
+                    <span class="member-number">02</span>
+                    <h3>Leo Pawan Awasthi</h3>
+                    <div class="member-position">Vice President</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-tie"></i></div>
+                <div class="member-info">
+                    <span class="member-number">03</span>
+                    <h3>Leo Priya Yadav</h3>
+                    <div class="member-position">Secretary</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-face-smile"></i></div>
+                <div class="member-info">
+                    <span class="member-number">04</span>
+                    <h3>Leo Aayush Pandey</h3>
+                    <div class="member-position">Treasurer</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-group"></i></div>
+                <div class="member-info">
+                    <span class="member-number">05</span>
+                    <h3>Leo Kiran Pd Kalauni</h3>
+                    <div class="member-position">Membership Chair</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-laptop-code"></i></div>
+                <div class="member-info">
+                    <span class="member-number">06</span>
+                    <h3>Leo Kripan Khadka</h3>
+                    <div class="member-position">IT Head</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-tie"></i></div>
+                <div class="member-info">
+                    <span class="member-number">07</span>
+                    <h3>Leo Deepesh Ghimire</h3>
+                    <div class="member-position">Joint Secretary</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-clipboard-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">08</span>
+                    <h3>Leo Mahesh Datt Joshi</h3>
+                    <div class="member-position">Club Administrator</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user-tie"></i></div>
+                <div class="member-info">
+                    <span class="member-number">09</span>
+                    <h3>Leo Hem Raj Awasthi</h3>
+                    <div class="member-position">Club Director</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-futbol"></i></div>
+                <div class="member-info">
+                    <span class="member-number">10</span>
+                    <h3>Leo Rohit Pandey</h3>
+                    <div class="member-position">Sports & ECA Chair</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-hashtag"></i></div>
+                <div class="member-info">
+                    <span class="member-number">11</span>
+                    <h3>Leo  Prabin Joshi</h3>
+                    <div class="member-position">Social Media Chair</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-globe"></i></div>
+                <div class="member-info">
+                    <span class="member-number">12</span>
+                    <h3>Leo Ujjwal Bhatta</h3>
+                    <div class="member-position">International Service Chair</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">13</span>
+                    <h3>Leo Mukesh Pandey</h3>
+                    <div class="member-position">Tail Twister</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">14</span>
+                    <h3>Leo Abhishek Paudel</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">15</span>
+                    <h3>Leo Ronak Karki</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">16</span>
+                    <h3>Leo Basant Bist</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">17</span>
+                    <h3>Leo Ekta Jha</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">18</span>
+                    <h3>Member Name 18</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">19</span>
+                    <h3>Leo Pratiksha Thapa</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">20</span>
+                    <h3>Leo Uzwal Thakur</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">21</span>
+                    <h3>Leo Biswash Tiwari</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">22</span>
+                    <h3>Member Name 22</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">23</span>
+                    <h3>Member Name 23</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">24</span>
+                    <h3>Member Name 24</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">25</span>
+                    <h3>Member Name 25</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">26</span>
+                    <h3>Member Name 26</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">27</span>
+                    <h3>Member Name 27</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">28</span>
+                    <h3>Member Name 28</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">29</span>
+                    <h3>Member Name 29</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">30</span>
+                    <h3>Member Name 30</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">31</span>
+                    <h3>Member Name 31</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+            <article class="member-card">
+                <div class="member-image"><i class="fas fa-user"></i></div>
+                <div class="member-info">
+                    <span class="member-number">32</span>
+                    <h3>Member Name 32</h3>
+                    <div class="member-position">General Member</div>
+                    <p>Leo Club Kathmandu Samakhusi</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT SECTION ============ -->
+<section id="contact">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>We'd Love to Hear From You</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Samakhusi, Kathmandu<br>Nepal</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+977-9820223965</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:lcktmsamakhusi@gmail.com" style="color: #003d82; text-decoration: none;">lcktmsamakhusi@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: #003d82; margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                        <a href="https://www.facebook.com/lcksamakhusi" style="color: #003d82; text-decoration: none;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lcktmsamakhusi/" style="color: #003d82; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/leo-club-of-kathmandu-samakhusi-b21647409/" style="color: #003d82; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" method="POST" action="#contact">
+                <h3 style="color: #003d82; margin-bottom: 1.5rem;">Send us a Message</h3>
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="container-fluid">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
+                    <div>
+                        <h4 style="margin: 0;">Leo Club of Kathmandu Samakhusi</h4>
+                        <p style="font-size: 0.85rem; margin: 0; color: #ddd;">District 325 B1, Nepal</p>
+                    </div>
+                </div>
+                <p>A youth-led organization dedicated to community service, leadership development, and making a positive impact in Kathmandu and beyond.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#members">Leadership</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Community Service</a></li>
+                    <li><a href="#">Youth Development</a></li>
+                    <li><a href="#">Educational Programs</a></li>
+                    <li><a href="#">Environmental Initiatives</a></li>
+                    <li><a href="#">Humanitarian Aid</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <div style="margin-top: 1.5rem;">
+                    <h5 style="margin-bottom: 0.8rem; color: #ffc107;">Follow Us</h5>
+                    <div style="display: flex; gap: 1.5rem; font-size: 1.8rem;">
+                        <a href="https://www.facebook.com/lcksamakhusi" target="_blank" rel="noopener noreferrer" title="Facebook" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lcktmsamakhushi/" target="_blank" rel="noopener noreferrer" title="Instagram" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/leo-club-of-kathmandu-samakhusi-b21647409/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Leo Club of Kathmandu Samakhusi. All rights reserved.</p>
+            <p>Serving with Heart | Leading with Purpose | Growing Together</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+<script src="/static/site/js/leo-hero-slider.js"></script>
+</body>
+</html>

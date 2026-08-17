@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Leo Club of Kathmandu Samakhusi</title>
+    <meta name="description" content="Explore Leo Club of Kathmandu Samakhusi events, activities, and community initiatives.">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,900,800" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/static/site/css/leo-club.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/site/leo-club-logo.png" rel="shortcut icon"/>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+    <div class="container-fluid">
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
+                <div class="club-title">
+                    <h1>Leo Club Kathmandu Samakhusi</h1>
+                    <p>District 325 B1, Nepal</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/events/">Events</a></li>
+                    <li><a href="/join/">Get Involved</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li>
+    <a href="{% url 'membership_application' %}"
+       style="background: #ffc107; color: #003d82; padding: 8px 15px; border-radius: 5px; font-weight: 600;">
+        Apply Now
+    </a>
+</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section style="padding: 4rem 2rem; background: var(--light-gray);">
+    <div class="container" style="max-width: 1200px;">
+        <div class="section-title">
+            <h2>Our Events & Activities</h2>
+            <p>Join Us in Making a Difference</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            
+            <!-- Event Card Template -->
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Monthly Event</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Environmental Cleanup Drive</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Every month, we organize community cleanup drives to beautify our neighborhood and promote environmental consciousness among residents.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> Last Sunday of Every Month, 8:00 AM</p>
+                        <p><strong>Where:</strong> Samakhusi, Kathmandu</p>
+                        <p><strong>Duration:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Quarterly</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Educational Scholarship Program</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">We provide scholarships and mentoring to deserving students, helping bridge the educational gap and nurturing future leaders.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> 4 times annually</p>
+                        <p><strong>Who:</strong> High school and college students</p>
+                        <p><strong>Value:</strong> Educational support & mentoring</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Semi-Annual</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Health Awareness Campaign</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Free health checkups, medical consultations, and wellness programs promoting healthy living and disease prevention.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> Twice yearly</p>
+                        <p><strong>Services:</strong> Health checkups, counseling</p>
+                        <p><strong>Open to:</strong> General public</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-people-carry"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">As Needed</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Disaster Relief Programs</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">When calamities strike, our club mobilizes resources and volunteers to provide immediate relief and support to affected communities.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> Emergency basis</p>
+                        <p><strong>Activities:</strong> Relief distribution, rehabilitation</p>
+                        <p><strong>Impact:</strong> Community recovery & support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-laugh-beam"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Monthly</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Member Meetings & Socials</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Regular meetings where we discuss initiatives, share experiences, and organize social events to strengthen our club community.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> Every month</p>
+                        <p><strong>Where:</strong> Club headquarters</p>
+                        <p><strong>Open to:</strong> Members</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Annual</div>
+                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Heritage & Cultural Preservation</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">We work to preserve and restore historical and cultural sites in Kathmandu, honoring our heritage for future generations.</p>
+                    <div style="font-size: 0.9rem; color: #999;">
+                        <p><strong>When:</strong> Annually</p>
+                        <p><strong>Activities:</strong> Restoration, maintenance</p>
+                        <p><strong>Impact:</strong> Cultural preservation</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 4rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid #ffc107;">
+            <h3 style="color: #003d82; margin-bottom: 1rem;">Want to Join Us?</h3>
+            <p style="margin-bottom: 1rem;">We're always looking for enthusiastic individuals who want to make a difference in our community. Whether you're interested in attending events, becoming a member, or volunteering for a specific project, we'd love to have you!</p>
+            <a href="/join/apply/" style="display: inline-block; padding: 0.8rem 2rem; background: #ffc107; color: #003d82; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;">Get Involved Today</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="container-fluid">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
+                    <div>
+                        <h4 style="margin: 0;">Leo Club of Kathmandu Samakhusi</h4>
+                        <p style="font-size: 0.85rem; margin: 0; color: #ddd;">District 325 B1, Nepal</p>
+                    </div>
+                </div>
+                <p>A youth-led organization dedicated to community service, leadership development, and making a positive impact in Kathmandu and beyond.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/events/">Events</a></li>
+                    <li><a href="/join/">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div style="display: flex; gap: 1.5rem; font-size: 1.8rem;">
+                    <a href="https://www.facebook.com/lcksamakhusi" target="_blank" rel="noopener noreferrer" title="Facebook" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/lcktmsamakhushi/" target="_blank" rel="noopener noreferrer" title="Instagram" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/leo-club-of-kathmandu-samakhusi-b21647409/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #ffc107; text-decoration: none; cursor: pointer; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.3)'; this.style.color='#003d82';" onmouseout="this.style.transform='scale(1)'; this.style.color='#ffc107';">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; margin-top: 2rem;">
+            <p>&copy; 2026 Leo Club of Kathmandu Samakhusi. All rights reserved. | District 325 B1, Nepal</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

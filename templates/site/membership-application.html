@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application - Leo Club of Kathmandu Samakhusi</title>
+    <meta name="description" content="Apply to become a member of Leo Club of Kathmandu Samakhusi.">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/static/site/css/leo-club.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/site/leo-club-logo.png">
+    <style>
+        :root { --leo-blue:#003d82; --leo-gold:#ffc107; --light:#f6f8fb; }
+        body { background:var(--light); color:#222; font-family:Quicksand,Arial,sans-serif; margin:0; }
+        .application-header { background:linear-gradient(135deg,var(--leo-blue),#0059ad); color:#fff; padding:34px 20px; text-align:center; }
+        .application-header img { height:76px; width:auto; margin-bottom:12px; }
+        .application-header h1 { margin:0 0 7px; font-family:Raleway,sans-serif; font-size:2rem; }
+        .application-header p { margin:0; opacity:.9; }
+        .application-wrap { max-width:1050px; margin:35px auto 60px; padding:0 18px; }
+        .application-card { background:#fff; border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,.08); padding:30px; margin-bottom:24px; }
+        .section-heading { color:var(--leo-blue); border-bottom:2px solid var(--leo-gold); padding-bottom:10px; margin:0 0 22px; font-family:Raleway,sans-serif; }
+        .section-heading i { color:var(--leo-gold); margin-right:8px; }
+        .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 22px; }
+        .field.full { grid-column:1/-1; }
+        label { display:block; color:#183b61; font-weight:700; margin-bottom:7px; }
+        label .required { color:#d32f2f; }
+        input, select, textarea { width:100%; box-sizing:border-box; padding:11px 13px; border:1px solid #d4dbe4; border-radius:7px; font:inherit; background:#fff; }
+        input:focus, select:focus, textarea:focus { outline:none; border-color:var(--leo-blue); box-shadow:0 0 0 3px rgba(0,61,130,.1); }
+        .help { color:#697586; font-size:.86rem; margin-top:5px; }
+        .errorlist { color:#b42318; margin:6px 0 0; padding-left:18px; }
+        .payment-box { display:grid; grid-template-columns:280px 1fr; gap:30px; align-items:center; }
+        .qr-card { text-align:center; border:2px dashed var(--leo-gold); border-radius:12px; padding:18px; background:#fffdf4; }
+        .qr-card img { width:220px; max-width:100%; height:auto; display:block; margin:0 auto 10px; }
+        .qr-card strong { color:var(--leo-blue); }
+        .declaration { background:#f8fafc; border-left:4px solid var(--leo-gold); padding:17px 18px; }
+        .check { display:flex; gap:10px; align-items:flex-start; margin:12px 0; }
+        .check input { width:auto; margin-top:4px; }
+        .check label { margin:0; font-weight:500; color:#333; }
+        .submit-row { text-align:center; margin-top:25px; }
+        .submit-btn { background:var(--leo-gold); color:var(--leo-blue); border:0; border-radius:30px; padding:14px 32px; font-weight:800; font-size:1.05rem; cursor:pointer; }
+        .submit-btn:hover { transform:translateY(-1px); box-shadow:0 6px 15px rgba(0,0,0,.12); }
+        .back-link { display:inline-block; margin-top:15px; color:#fff; text-decoration:none; }
+        @media(max-width:720px) { .form-grid,.payment-box { grid-template-columns:1fr; } .application-card { padding:20px; } .application-header h1{font-size:1.55rem;} }
+    </style>
+</head>
+<body>
+<header class="application-header">
+    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club of Kathmandu Samakhusi">
+    <h1>Membership Registration</h1>
+    <p>Leo Club of Kathmandu Samakhusi · District 325 B1, Nepal</p>
+    <a class="back-link" href="/"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+</header>
+
+<main class="application-wrap">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="application-card">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+        <section class="application-card">
+            <h2 class="section-heading"><i class="fa-solid fa-user"></i> Personal Information</h2>
+            <div class="form-grid">
+                {% for field in form %}
+                    {% if field.name == "full_name" or field.name == "date_of_birth" or field.name == "gender" or field.name == "profile_photo" or field.name == "phone" or field.name == "email" or field.name == "address" or field.name == "emergency_contact_name" or field.name == "emergency_contact_number" %}
+                    <div class="field {% if field.name == 'address' %}full{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
+                        {{ field }}
+                        {% if field.help_text %}<div class="help">{{ field.help_text }}</div>{% endif %}
+                        {{ field.errors }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="application-card">
+            <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education & Occupation</h2>
+            <div class="form-grid">
+                {% for field in form %}
+                    {% if field.name == "institution" or field.name == "program" or field.name == "semester_year" or field.name == "occupation" %}
+                    <div class="field">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="application-card">
+            <h2 class="section-heading"><i class="fa-solid fa-hand-holding-heart"></i> Leo & Service Information</h2>
+            <div class="form-grid">
+                {% for field in form %}
+                    {% if field.name == "reason_to_join" or field.name == "previous_experience" or field.name == "skills" or field.name == "interests" or field.name == "service_areas" or field.name == "heard_about_us" %}
+                    <div class="field {% if field.name != 'heard_about_us' %}full{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="application-card">
+            <h2 class="section-heading"><i class="fa-solid fa-qrcode"></i> Membership Payment</h2>
+            <div class="payment-box">
+                <div class="qr-card">
+                    <img src="/static/site/images/payment-qr.svg" alt="Leo Club payment QR code">
+                    <strong>Payment QR</strong>
+                    <div class="help">Replace this placeholder with the official club payment QR image.</div>
+                </div>
+                <div class="form-grid">
+                    {% for field in form %}
+                        {% if field.name == "transaction_id" or field.name == "payment_receipt" %}
+                        <div class="field full">
+                            <label for="{{ field.id_for_label }}">{{ field.label }} <span class="required">*</span></label>
+                            {{ field }}
+                            {% if field.name == "payment_receipt" %}<div class="help">Upload a clear screenshot/photo of your payment receipt.</div>{% endif %}
+                            {{ field.errors }}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="application-card">
+            <h2 class="section-heading"><i class="fa-solid fa-file-signature"></i> Declaration</h2>
+            <div class="declaration">
+                {% for field in form %}
+                    {% if field.name == "information_correct" or field.name == "agrees_to_rules" or field.name == "contact_consent" %}
+                    <div class="check">
+                        {{ field }}
+                        <label for="{{ field.id_for_label }}">{{ field.label }} <span class="required">*</span></label>
+                    </div>
+                    {{ field.errors }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="submit-row">
+                <button class="submit-btn" type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Membership Application</button>
+            </div>
+        </section>
+    </form>
+</main>
+</body>
+</html>
