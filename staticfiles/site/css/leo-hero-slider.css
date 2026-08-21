@@ -1,0 +1,447 @@
+
+/* =========================================================
+   Leo Club Cinematic Hero Slider
+   Inspired by modern esports landing pages, redesigned
+   for a youth/service organization.
+   ========================================================= */
+
+.leo-hero-slider {
+    --leo-blue: #003d82;
+    --leo-blue-deep: #001a3a;
+    --leo-gold: #ffc107;
+    --leo-white: #ffffff;
+    position: relative;
+    width: 100%;
+    height: min(820px, calc(100vh - 92px));
+    min-height: 620px;
+    overflow: hidden;
+    background: #061a32;
+    color: #fff;
+    isolation: isolate;
+}
+
+.leo-slides,
+.leo-slide,
+.leo-slide-art,
+.leo-slide-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.leo-slide {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity .85s cubic-bezier(.22,.61,.36,1);
+}
+
+.leo-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.leo-slide-art {
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.07);
+    transition: transform 7s cubic-bezier(.2,.7,.2,1);
+}
+
+.leo-slide.is-active .leo-slide-art {
+    transform: scale(1);
+}
+
+.leo-slide-overlay {
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(0,18,43,.94) 0%, rgba(0,30,62,.78) 39%, rgba(0,39,78,.28) 72%, rgba(0,20,43,.50) 100%),
+        linear-gradient(0deg, rgba(0,11,27,.74) 0%, transparent 38%, rgba(0,11,27,.12) 100%);
+}
+
+.leo-slide-content {
+    position: relative;
+    z-index: 3;
+    width: min(1180px, calc(100% - 120px));
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 40px;
+}
+
+.leo-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 22px;
+    color: rgba(255,255,255,.86);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.leo-eyebrow span {
+    width: 32px;
+    height: 2px;
+    display: inline-block;
+    background: var(--leo-gold);
+}
+
+.leo-slide-content h2 {
+    margin: 0;
+    max-width: 780px;
+    color: #fff;
+    font-size: clamp(4rem, 7.4vw, 7.3rem);
+    font-weight: 300;
+    line-height: .94;
+    letter-spacing: -4px;
+    text-shadow: 0 12px 35px rgba(0,0,0,.28);
+}
+
+.leo-slide-content h2 strong {
+    color: var(--leo-gold);
+    font-weight: 800;
+}
+
+.leo-slide-content p {
+    max-width: 590px;
+    margin: 28px 0 30px;
+    color: rgba(255,255,255,.78);
+    font-size: 1.12rem;
+    line-height: 1.75;
+}
+
+.leo-slide .cta-buttons {
+    justify-content: flex-start;
+}
+
+.leo-slide .btn {
+    min-width: 175px;
+    text-align: center;
+}
+
+.leo-slide .btn-secondary {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.5);
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.leo-slide .btn-secondary:hover {
+    background: #fff;
+    color: var(--leo-blue);
+}
+
+.leo-slider-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 8;
+    width: 54px;
+    height: 54px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 50%;
+    background: rgba(0,20,45,.22);
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+    backdrop-filter: blur(8px);
+    transition: .3s ease;
+}
+
+.leo-slider-arrow:hover {
+    background: var(--leo-gold);
+    border-color: var(--leo-gold);
+    color: var(--leo-blue);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.leo-slider-prev { left: 28px; }
+.leo-slider-next { right: 28px; }
+
+.leo-slider-controls {
+    position: absolute;
+    left: max(60px, calc((100% - 1180px)/2));
+    right: max(60px, calc((100% - 1180px)/2));
+    bottom: 54px;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leo-slider-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.leo-slider-dots button {
+    width: 48px;
+    height: 4px;
+    padding: 0;
+    border: 0;
+    background: rgba(255,255,255,.28);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.leo-slider-dots button span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--leo-gold);
+}
+
+.leo-slider-dots button.is-active span {
+    animation: leoDotProgress 5.8s linear forwards;
+}
+
+@keyframes leoDotProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.leo-slide-count {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.5);
+}
+
+.leo-slide-count strong {
+    color: #fff;
+    font-size: 22px;
+}
+
+.leo-slider-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    z-index: 9;
+    background: rgba(255,255,255,.12);
+}
+
+.leo-slider-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--leo-gold);
+}
+
+.leo-slider-progress.is-running span {
+    animation: leoProgress 5.8s linear forwards;
+}
+
+@keyframes leoProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.leo-scroll-cue {
+    position: absolute;
+    right: 28px;
+    bottom: 120px;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,.7);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.leo-scroll-cue i {
+    color: var(--leo-gold);
+    animation: leoBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes leoBounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+}
+
+/* Slide entrance animation */
+.leo-slide.is-active .leo-eyebrow,
+.leo-slide.is-active h2,
+.leo-slide.is-active p,
+.leo-slide.is-active .cta-buttons {
+    animation: leoTextIn .75s cubic-bezier(.22,.61,.36,1) both;
+}
+
+.leo-slide.is-active .leo-eyebrow { animation-delay: .12s; }
+.leo-slide.is-active h2 { animation-delay: .2s; }
+.leo-slide.is-active p { animation-delay: .31s; }
+.leo-slide.is-active .cta-buttons { animation-delay: .4s; }
+
+@keyframes leoTextIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loader shown only during the first paint */
+.leo-slider-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    display: grid;
+    place-items: center;
+    background: #001a3a;
+    transition: opacity .65s ease, visibility .65s ease;
+}
+
+.leo-slider-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.leo-slider-loader img {
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 30px rgba(0,0,0,.35));
+    animation: leoLogoPulse 1.2s ease-in-out infinite;
+}
+
+.leo-loader-ring {
+    width: 132px;
+    height: 132px;
+    border: 2px solid rgba(255,255,255,.12);
+    border-top-color: var(--leo-gold);
+    border-radius: 50%;
+    animation: leoSpin 1s linear infinite;
+}
+
+@keyframes leoSpin { to { transform: rotate(360deg); } }
+@keyframes leoLogoPulse {
+    0%,100% { transform: scale(.96); }
+    50% { transform: scale(1.04); }
+}
+
+/* Local SVG artwork */
+.leo-art-community {
+    background:
+        radial-gradient(circle at 75% 35%, rgba(255,193,7,.30), transparent 25%),
+        linear-gradient(125deg, #001a3a 0%, #003d82 55%, #062b50 100%);
+}
+.leo-art-community::after,
+.leo-art-service::after,
+.leo-art-leadership::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .8;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: min(58vw, 780px) auto;
+}
+.leo-art-community::after {
+    background-image: url("../images/leo-hero-community.svg");
+}
+.leo-art-service {
+    background:
+        radial-gradient(circle at 72% 25%, rgba(255,193,7,.23), transparent 22%),
+        linear-gradient(135deg, #061d38 0%, #003d82 48%, #004b73 100%);
+}
+.leo-art-service::after {
+    background-image: url("../images/leo-hero-service.svg");
+}
+.leo-art-leadership {
+    background:
+        radial-gradient(circle at 70% 40%, rgba(255,193,7,.24), transparent 25%),
+        linear-gradient(135deg, #00152f 0%, #003d82 55%, #071d39 100%);
+}
+.leo-art-leadership::after {
+    background-image: url("../images/leo-hero-leadership.svg");
+}
+
+@media (max-width: 900px) {
+    .leo-hero-slider {
+        min-height: 680px;
+        height: calc(100vh - 105px);
+    }
+    .leo-slide-content {
+        width: calc(100% - 110px);
+    }
+    .leo-slide-content h2 {
+        font-size: clamp(3.2rem, 10vw, 5.5rem);
+    }
+    .leo-scroll-cue { display: none; }
+    .leo-slide-art::after {
+        opacity: .35;
+        background-size: 75vw auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .leo-hero-slider {
+        min-height: 680px;
+        height: calc(100svh - 120px);
+    }
+    .leo-slide-content {
+        width: calc(100% - 42px);
+        padding-bottom: 60px;
+    }
+    .leo-slide-content h2 {
+        font-size: clamp(3rem, 15vw, 4.6rem);
+        letter-spacing: -2px;
+    }
+    .leo-slide-content p {
+        font-size: .98rem;
+        margin: 20px 0 24px;
+    }
+    .leo-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+    .leo-slider-arrow {
+        width: 42px;
+        height: 42px;
+        top: auto;
+        bottom: 34px;
+        transform: none;
+    }
+    .leo-slider-arrow:hover {
+        transform: scale(1.05);
+    }
+    .leo-slider-prev { left: 20px; }
+    .leo-slider-next { right: 20px; }
+    .leo-slider-controls {
+        left: 20px;
+        right: 20px;
+        bottom: 95px;
+    }
+    .leo-slider-dots button {
+        width: 32px;
+    }
+    .leo-slide-count { display: none; }
+    .leo-slide .cta-buttons {
+        align-items: stretch;
+        width: 100%;
+    }
+    .leo-slide .btn {
+        width: auto;
+        min-width: 0;
+        flex: 1;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .leo-slide-overlay {
+        background:
+            linear-gradient(90deg, rgba(0,18,43,.93), rgba(0,26,53,.62)),
+            linear-gradient(0deg, rgba(0,11,27,.82), transparent 60%);
+    }
+}
