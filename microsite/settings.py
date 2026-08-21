@@ -22,7 +22,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 INSTALLED_APPS = [
-    "django.contrib.staticfiles",
+    "django.contrib.staticfiles",  # Must remain at the top for local collection
     "cloudinary_storage",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -69,7 +69,7 @@ if DATABASE_URL:
     DATABASES = {
         "default": dj_database_url.config(
             default=DATABASE_URL,
-            conn_max_age=0,  # Zero recommended for serverless connections
+            conn_max_age=0,  # Recommended for serverless environments
             conn_health_checks=True,
         )
     }
@@ -94,7 +94,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# Media Files (Cloudinary for production)
+# Media Files Configuration
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -105,20 +105,14 @@ CLOUDINARY_STORAGE = {
 }
 
 # Modern STORAGES dictionary (Django 4.2+)
-# Change this section in settings.py temporarily:
 STORAGES = {
     "default": {
         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
-
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
-# Legacy fallbacks for packages that bypass STORAGES
-# DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Production security settings
 if not DEBUG:
