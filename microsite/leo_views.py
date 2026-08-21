@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
-
+from django.shortcuts import redirect, render
 from membership.forms import MembershipApplicationForm
 
 
@@ -25,10 +24,18 @@ def membership_application(request):
         form = MembershipApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             application = form.save()
+            messages.success(
+                request, "Your membership application has been submitted successfully!"
+            )
             return render(
                 request,
                 "site/application-success.html",
                 {"application": application},
+            )
+        else:
+            messages.error(
+                request,
+                "There was an error in your submission. Please check the fields below.",
             )
     else:
         form = MembershipApplicationForm()

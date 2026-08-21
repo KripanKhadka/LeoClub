@@ -356,6 +356,7 @@ section {
 }
 
 /* ============ MEMBERS SECTION ============ */
+
 #members {
     background: white;
 }
@@ -386,7 +387,12 @@ section {
     font-size: .85rem;
 }
 
-.members-summary strong { color: var(--gold); }
+.members-summary strong {
+    color: var(--gold);
+}
+
+
+/* ============ MEMBER CARD ============ */
 
 .member-card {
     background: #fff;
@@ -403,16 +409,31 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+
+/* ============ MEMBER IMAGE ============ */
+
 .member-image {
     width: 100%;
-    height: 155px;
-    background: linear-gradient(135deg, var(--primary-blue), #0052a3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 4rem;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    background: #f3f7fc;
 }
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    /* Keeps the image from stretching */
+    object-fit: cover;
+
+    /* Keeps the person's face/head toward the top */
+    object-position: center top;
+}
+
+
+/* ============ MEMBER INFORMATION ============ */
 
 .member-info {
     padding: 1.15rem 1rem 1.25rem;
@@ -434,7 +455,7 @@ section {
 }
 
 .member-position {
-    color: var(--gold);
+    color: red;
     font-weight: 600;
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
@@ -446,17 +467,82 @@ section {
     margin: 0;
 }
 
-@media (max-width: 1100px) {
-    .members-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* ============ MEMBER SUBSECTIONS ============ */
+
+.members-subsection {
+    margin-top: 4rem;
 }
+
+.members-subsection-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.members-subsection-title h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.members-subsection-title p {
+    margin: 0;
+    color: var(--text-gray);
+}
+
+
+/* ============ TABLET ============ */
+
+@media (max-width: 1100px) {
+
+    .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============ SMALL TABLET / MOBILE ============ */
 
 @media (max-width: 760px) {
-    .members-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .member-image { height: 125px; }
+
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .member-image {
+        aspect-ratio: 3 / 4;
+        height: auto;
+    }
+
+    .member-info {
+        padding: 1rem .8rem 1.1rem;
+    }
+
+    .member-info h3 {
+        font-size: 1rem;
+    }
+
+    .member-position {
+        font-size: .85rem;
+    }
+
 }
 
+
+/* ============ MOBILE ============ */
+
 @media (max-width: 480px) {
-    .members-grid { grid-template-columns: 1fr; }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-image {
+        aspect-ratio: 3 / 4;
+    }
+
 }
 
 /* ============ CONTACT SECTION ============ */
@@ -675,3 +761,57 @@ footer {
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-3 { margin-bottom: 3rem; }
+
+
+
+
+
+
+
+/* ==============================
+   EVENT GALLERY
+   ============================== */
+
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    height: 220px;
+    overflow: hidden;
+}
+
+.event-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.event-card {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .event-gallery {
+        height: 200px;
+    }
+
+    .event-gallery img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .event-gallery {
+        height: 180px;
+    }
+
+    .event-gallery img {
+        height: 180px;
+    }
+}

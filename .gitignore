@@ -1,4 +1,5 @@
 db.sqlite3
+.env
 *.pyc
 *~
 .project
@@ -15,3 +16,4 @@ fabfile
 microsite/settings_local.py
 node_modules/
 static/webpack_bundles
+

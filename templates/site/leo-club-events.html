@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
     <div class="container-fluid">
         <div class="header-top">
             <div class="logo-section">
-                <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
+                <img src="/static/site/images/leologo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
                 <div class="club-title">
                     <h1>Leo Club Kathmandu Samakhusi</h1>
                     <p>District 325 B1, Nepal</p>
@@ -34,130 +35,164 @@
                     <li><a href="/join/">Get Involved</a></li>
                     <li><a href="/#contact">Contact</a></li>
                     <li>
-    <a href="{% url 'membership_application' %}"
-       style="background: #ffc107; color: #003d82; padding: 8px 15px; border-radius: 5px; font-weight: 600;">
-        Apply Now
-    </a>
-</li>
+                        <a href="{% url 'membership_application' %}"
+                           style="background: #ffc107; color: #003d82; padding: 8px 15px; border-radius: 5px; font-weight: 600;">
+                            Apply Now
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </div>
 </header>
 
-<section style="padding: 4rem 2rem; background: var(--light-gray);">
-    <div class="container" style="max-width: 1200px;">
+<!-- ============ EVENTS SECTION ============ -->
+<section id="events" style="padding: 4rem 0;">
+    <div class="container-fluid">
+
         <div class="section-title">
-            <h2>Our Events & Activities</h2>
-            <p>Join Us in Making a Difference</p>
+            <h2>Our Events</h2>
+            <p>Moments of Service, Leadership &amp; Fellowship</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            
-            <!-- Event Card Template -->
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-tree"></i>
+        <div class="events-grid">
+
+            <!-- ================= EVENT 1 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/treasure-1.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-2.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-3.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-4.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-5.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-6.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-7.jpeg' %}" alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-8.jpeg' %}" alt="Treasure Hunt">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Monthly Event</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Environmental Cleanup Drive</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">Every month, we organize community cleanup drives to beautify our neighborhood and promote environmental consciousness among residents.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> Last Sunday of Every Month, 8:00 AM</p>
-                        <p><strong>Where:</strong> Samakhusi, Kathmandu</p>
-                        <p><strong>Duration:</strong> 3-4 hours</p>
-                    </div>
+                <div class="event-content">
+                    <span class="event-date">August 10, 2026</span>
+                    <h3>Treasure Hunt 2026</h3>
+                    <p>An exciting and engaging treasure hunt organized by Leo Club of Kathmandu Samakhusi.</p>
                 </div>
             </div>
 
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-book"></i>
+            <!-- ================= EVENT 2 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/cleanup-1.jpeg' %}" alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-2.jpeg' %}" alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-3.jpeg' %}" alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-4.jpeg' %}" alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-5.jpeg' %}" alt="Environmental Cleanup">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Quarterly</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Educational Scholarship Program</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">We provide scholarships and mentoring to deserving students, helping bridge the educational gap and nurturing future leaders.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> 4 times annually</p>
-                        <p><strong>Who:</strong> High school and college students</p>
-                        <p><strong>Value:</strong> Educational support & mentoring</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Semi-Annual</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Health Awareness Campaign</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">Free health checkups, medical consultations, and wellness programs promoting healthy living and disease prevention.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> Twice yearly</p>
-                        <p><strong>Services:</strong> Health checkups, counseling</p>
-                        <p><strong>Open to:</strong> General public</p>
-                    </div>
+                <div class="event-content">
+                    <span class="event-date">July 25, 2026</span>
+                    <h3>Hiking and Cleanup</h3>
+                    <p>A community cleanup initiative where our Leo members worked together to make our surroundings cleaner and better.</p>
                 </div>
             </div>
 
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-people-carry"></i>
+            <!-- ================= EVENT 3 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/health-1.jpeg' %}" alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-2.jpeg' %}" alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-3.jpeg' %}" alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-4.jpeg' %}" alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-5.jpeg' %}" alt="Health Awareness Program">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">As Needed</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Disaster Relief Programs</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">When calamities strike, our club mobilizes resources and volunteers to provide immediate relief and support to affected communities.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> Emergency basis</p>
-                        <p><strong>Activities:</strong> Relief distribution, rehabilitation</p>
-                        <p><strong>Impact:</strong> Community recovery & support</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-laugh-beam"></i>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Monthly</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Member Meetings & Socials</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">Regular meetings where we discuss initiatives, share experiences, and organize social events to strengthen our club community.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> Every month</p>
-                        <p><strong>Where:</strong> Club headquarters</p>
-                        <p><strong>Open to:</strong> Members</p>
-                    </div>
+                <div class="event-content">
+                    <span class="event-date">July 15, 2026</span>
+                    <h3>Emotional Awareness Program</h3>
+                    <p>An initiative focused on spreading awareness about health and well-being in our community.</p>
                 </div>
             </div>
 
-            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    <i class="fas fa-landmark"></i>
+            <!-- ================= EVENT 4 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/outreach-1.jpeg' %}" alt="Community Outreach">
+                    <img src="{% static 'site/images/events/outreach-2.jpeg' %}" alt="Community Outreach">
+                    <img src="{% static 'site/images/events/outreach-3.jpeg' %}" alt="Community Outreach">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <div style="display: inline-block; background: #ffc107; color: #003d82; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem;">Annual</div>
-                    <h3 style="color: #003d82; margin-bottom: 0.5rem;">Heritage & Cultural Preservation</h3>
-                    <p style="color: #666; margin-bottom: 1rem;">We work to preserve and restore historical and cultural sites in Kathmandu, honoring our heritage for future generations.</p>
-                    <div style="font-size: 0.9rem; color: #999;">
-                        <p><strong>When:</strong> Annually</p>
-                        <p><strong>Activities:</strong> Restoration, maintenance</p>
-                        <p><strong>Impact:</strong> Cultural preservation</p>
-                    </div>
+                <div class="event-content">
+                    <span class="event-date">June 28, 2026</span>
+                    <h3>Blood Donation Program</h3>
+                    <p>Leo members came together to support the community through service and outreach activities.</p>
+                </div>
+            </div>
+
+            <!-- ================= EVENT 5 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/fellowship-1.jpeg' %}" alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-2.jpeg' %}" alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-3.jpeg' %}" alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-4.jpeg' %}" alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-5.jpeg' %}" alt="Leo Fellowship">
+                </div>
+                <div class="event-content">
+                    <span class="event-date">June 15, 2026</span>
+                    <h3>Friendly Cricksal Program</h3>
+                    <p>A fun and memorable fellowship event that brought our members together and strengthened our bond.</p>
+                </div>
+            </div>
+
+            <!-- ================= EVENT 6 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/leadership-1.jpeg' %}" alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-2.jpeg' %}" alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-3.jpeg' %}" alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-4.jpeg' %}" alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-5.jpeg' %}" alt="Leadership Development">
+                </div>
+                <div class="event-content">
+                    <span class="event-date">June 5, 2026</span>
+                    <h3>Management of Unclaimed Bodies</h3>
+                    <p>An initiative designed to take care of the bodies that are not identified or claimed.</p>
+                </div>
+            </div>
+
+            <!-- ================= EVENT 7 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/service-1.jpeg' %}" alt="Social Service">
+                    <img src="{% static 'site/images/events/service-2.jpeg' %}" alt="Social Service">
+                    <img src="{% static 'site/images/events/service-3.jpeg' %}" alt="Social Service">
+                    <img src="{% static 'site/images/events/service-4.jpeg' %}" alt="Social Service">
+                    <img src="{% static 'site/images/events/service-5.jpeg' %}" alt="Social Service">
+                </div>
+                <div class="event-content">
+                    <span class="event-date">May 25, 2026</span>
+                    <h3>Park Cleaning</h3>
+                    <p>A service initiative where our members worked together to create a positive impact in the community.</p>
+                </div>
+            </div>
+
+            <!-- ================= EVENT 8 ================= -->
+            <div class="event-card">
+                <div class="event-gallery">
+                    <img src="{% static 'site/images/events/sports1.jpeg' %}" alt="Leo Sports Fest">
+                    <img src="{% static 'site/images/events/sports2.jpeg' %}" alt="Leo Sports Fest">
+                    <img src="{% static 'site/images/events/sports3.png' %}" alt="Leo Sports Fest">
+                </div>
+                <div class="event-content">
+                    <span class="event-date">June 5, 2026</span>
+                    <h3>Leo Sports Fest 2026</h3>
+                    <p>An event for all leo members to enjoy and relax.</p>
                 </div>
             </div>
 
         </div>
 
-        <div style="margin-top: 4rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid #ffc107;">
+        <!-- Join CTA Banner -->
+        <div style="margin-top: 4rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid #ffc107; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
             <h3 style="color: #003d82; margin-bottom: 1rem;">Want to Join Us?</h3>
             <p style="margin-bottom: 1rem;">We're always looking for enthusiastic individuals who want to make a difference in our community. Whether you're interested in attending events, becoming a member, or volunteering for a specific project, we'd love to have you!</p>
-            <a href="/join/apply/" style="display: inline-block; padding: 0.8rem 2rem; background: #ffc107; color: #003d82; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;">Get Involved Today</a>
+            <a href="{% url 'membership_application' %}" style="display: inline-block; padding: 0.8rem 2rem; background: #ffc107; color: #003d82; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;">Get Involved Today</a>
         </div>
+
     </div>
 </section>
 
@@ -167,7 +202,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
+                    <img src="/static/site/images/leologo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
                     <div>
                         <h4 style="margin: 0;">Leo Club of Kathmandu Samakhusi</h4>
                         <p style="font-size: 0.85rem; margin: 0; color: #ddd;">District 325 B1, Nepal</p>

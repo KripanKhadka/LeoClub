@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership Application - Leo Club of Kathmandu Samakhusi</title>
     <meta name="description" content="Apply to become a member of Leo Club of Kathmandu Samakhusi.">
+    
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="/static/site/css/leo-club.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/static/site/leo-club-logo.png">
+    
+    <!-- Updated to Django Static Tags -->
+    <link href="{% static 'site/css/leo-club.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'site/leo-club-logo.png' %}">
+    
     <style>
         :root { --leo-blue:#003d82; --leo-gold:#ffc107; --light:#f6f8fb; }
         body { background:var(--light); color:#222; font-family:Quicksand,Arial,sans-serif; margin:0; }
@@ -46,14 +51,14 @@
 </head>
 <body>
 <header class="application-header">
-    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club of Kathmandu Samakhusi">
+    <img src="{% static 'site/images/leologo.png' %}" alt="Leo Club of Kathmandu Samakhusi">
     <h1>Membership Registration</h1>
     <p>Leo Club of Kathmandu Samakhusi · District 325 B1, Nepal</p>
-    <a class="back-link" href="/"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <a class="back-link" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
 </header>
 
 <main class="application-wrap">
-    <form method="post" enctype="multipart/form-data" novalidate>
+    <form method="POST" action="{% url 'membership_application' %}" enctype="multipart/form-data">
         {% csrf_token %}
 
         {% if form.non_field_errors %}
@@ -66,7 +71,7 @@
             <h2 class="section-heading"><i class="fa-solid fa-user"></i> Personal Information</h2>
             <div class="form-grid">
                 {% for field in form %}
-                    {% if field.name == "full_name" or field.name == "date_of_birth" or field.name == "gender" or field.name == "profile_photo" or field.name == "phone" or field.name == "email" or field.name == "address" or field.name == "emergency_contact_name" or field.name == "emergency_contact_number" %}
+                    {% if field.name in "full_name date_of_birth gender profile_photo phone email address emergency_contact_name emergency_contact_number" %}
                     <div class="field {% if field.name == 'address' %}full{% endif %}">
                         <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
                         {{ field }}
@@ -82,7 +87,7 @@
             <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education & Occupation</h2>
             <div class="form-grid">
                 {% for field in form %}
-                    {% if field.name == "institution" or field.name == "program" or field.name == "semester_year" or field.name == "occupation" %}
+                    {% if field.name in "institution program semester_year occupation" %}
                     <div class="field">
                         <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
                         {{ field }}
@@ -97,7 +102,7 @@
             <h2 class="section-heading"><i class="fa-solid fa-hand-holding-heart"></i> Leo & Service Information</h2>
             <div class="form-grid">
                 {% for field in form %}
-                    {% if field.name == "reason_to_join" or field.name == "previous_experience" or field.name == "skills" or field.name == "interests" or field.name == "service_areas" or field.name == "heard_about_us" %}
+                    {% if field.name in "reason_to_join previous_experience skills interests service_areas heard_about_us" %}
                     <div class="field {% if field.name != 'heard_about_us' %}full{% endif %}">
                         <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required">*</span>{% endif %}</label>
                         {{ field }}
@@ -112,13 +117,12 @@
             <h2 class="section-heading"><i class="fa-solid fa-qrcode"></i> Membership Payment</h2>
             <div class="payment-box">
                 <div class="qr-card">
-                    <img src="/static/site/images/payment-qr.svg" alt="Leo Club payment QR code">
+                    <img src="{% static 'site/images/payment.png' %}" alt="Leo Club payment QR code">
                     <strong>Payment QR</strong>
-                    <div class="help">Replace this placeholder with the official club payment QR image.</div>
                 </div>
                 <div class="form-grid">
                     {% for field in form %}
-                        {% if field.name == "transaction_id" or field.name == "payment_receipt" %}
+                        {% if field.name in "transaction_id payment_receipt" %}
                         <div class="field full">
                             <label for="{{ field.id_for_label }}">{{ field.label }} <span class="required">*</span></label>
                             {{ field }}
@@ -135,7 +139,7 @@
             <h2 class="section-heading"><i class="fa-solid fa-file-signature"></i> Declaration</h2>
             <div class="declaration">
                 {% for field in form %}
-                    {% if field.name == "information_correct" or field.name == "agrees_to_rules" or field.name == "contact_consent" %}
+                    {% if field.name in "information_correct agrees_to_rules contact_consent" %}
                     <div class="check">
                         {{ field }}
                         <label for="{{ field.id_for_label }}">{{ field.label }} <span class="required">*</span></label>

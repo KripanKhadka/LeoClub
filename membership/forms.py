@@ -14,14 +14,14 @@ class MembershipApplicationForm(forms.ModelForm):
             "information_correct", "agrees_to_rules", "contact_consent",
         ]
         widgets = {
-            "date_of_birth": forms.DateInput(attrs={"type": "date"}),
-            "address": forms.Textarea(attrs={"rows": 3}),
-            "reason_to_join": forms.Textarea(attrs={"rows": 4}),
-            "previous_experience": forms.Textarea(attrs={"rows": 3}),
-            "skills": forms.Textarea(attrs={"rows": 3}),
-            "interests": forms.Textarea(attrs={"rows": 3}),
-            "service_areas": forms.Textarea(attrs={"rows": 3}),
-            "heard_about_us": forms.TextInput(attrs={"placeholder": "Facebook, Instagram, friend, event, etc."}),
+            "date_of_birth": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+            "address": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "reason_to_join": forms.Textarea(attrs={"rows": 4, "class": "form-control"}),
+            "previous_experience": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "skills": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "interests": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "service_areas": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "heard_about_us": forms.TextInput(attrs={"placeholder": "Facebook, Instagram, friend, event, etc.", "class": "form-control"}),
         }
         labels = {
             "institution": "School / College / University",
@@ -38,22 +38,35 @@ class MembershipApplicationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        required = [
+        required_fields = [
             "full_name", "date_of_birth", "gender", "phone", "email", "address",
             "institution", "reason_to_join", "transaction_id", "payment_receipt",
         ]
-        for name in required:
-            self.fields[name].required = True
+        for name in required_fields:
+            if name in self.fields:
+                self.fields[name].required = True
 
     def clean_email(self):
-        email = self.cleaned_data["email"].strip().lower()
-        if MembershipApplication.objects.filter(email__iexact=email).exists():
+        email = self.cleaned_data.get("email", "").strip().lower()
+        query = MembershipApplication.objects.filter(email__iexact=email)
+        
+        # Exclude current record if editing an existing application
+        if self.instance and self.instance.pk:
+            query = query.exclude(pk=self.instance.pk)
+            
+        if query.exists():
             raise forms.ValidationError("An application has already been submitted with this email address.")
         return email
 
     def clean_phone(self):
-        phone = self.cleaned_data["phone"].strip()
-        if MembershipApplication.objects.filter(phone=phone).exists():
+        phone = self.cleaned_data.get("phone", "").strip()
+        query = MembershipApplication.objects.filter(phone=phone)
+        
+        # Exclude current record if editing an existing application
+        if self.instance and self.instance.pk:
+            query = query.exclude(pk=self.instance.pk)
+            
+        if query.exists():
             raise forms.ValidationError("An application has already been submitted with this phone number.")
         return phone
 

@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +24,7 @@
     <div class="container-fluid">
         <div class="header-top">
             <div class="logo-section">
-                <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
+                <img src="/static/site/images/leologo.png" alt="Leo Club Kathmandu Samakhusi Logo" style="height: 70px; width: auto;">
                 <div class="club-title">
                     <h1>Leo Club Kathmandu Samakhusi</h1>
                     <p>District 325 B1, Nepal</p>
@@ -51,7 +53,7 @@
 <section id="home" class="leo-hero-slider" aria-label="Leo Club highlights">
     <div class="leo-slider-loader" aria-hidden="true">
         <div class="leo-loader-ring"></div>
-        <img src="/static/site/images/leo-club-logo.png" alt="">
+        <img src="/static/site/images/leologo.png" alt="">
     </div>
 
     <div class="leo-slides">
@@ -145,11 +147,11 @@
                 </ul>
             </div>
             
-            <div class="about-image">
-                <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #003d82 0%, #ffc107 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                    <i class="fas fa-handshake"></i>
-                </div>
-            </div>
+           <div class="about-image">
+    <img src="{% static 'site/images/leobanner.jpeg' %}" 
+         alt="About Leo Club of Kathmandu Samakhusi" 
+         style="width: 100%; height: 600px; object-fit: cover; border-radius: 10px;">
+</div>
         </div>
     </div>
 </section>
@@ -215,387 +217,738 @@
 </section>
 
 <!-- ============ EVENTS SECTION ============ -->
+{% load static %}
+
 <section id="events">
     <div class="container-fluid">
+
         <div class="section-title">
-            <h2>Upcoming Events</h2>
-            <p>Join Us in Making a Difference</p>
+            <h2>Our Events</h2>
+            <p>Moments of Service, Leadership &amp; Fellowship</p>
         </div>
-        
+
         <div class="events-grid">
+
+
+            <!-- ================= EVENT 1 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-tree"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/treasure-1.jpeg' %}"
+                         alt="Treasure Hunt">
+
+                    <img src="{% static 'site/images/events/treasure-2.jpeg' %}"
+                         alt="Treasure Hunt">
+
+                    <img src="{% static 'site/images/events/treasure-3.jpeg' %}"
+                         alt="Treasure Hunt">
+
+                    <img src="{% static 'site/images/events/treasure-4.jpeg' %}"
+                         alt="Treasure Hunt">
+                         
+                    <img src="{% static 'site/images/events/treasure-5.jpeg' %}"
+                         alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-6.jpeg' %}"
+                         alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-7.jpeg' %}"
+                         alt="Treasure Hunt">
+                    <img src="{% static 'site/images/events/treasure-8.jpeg' %}"
+                         alt="Treasure Hunt">
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">September 15</span>
-                    <h3>Environmental Cleanup Drive</h3>
-                    <p>Join us as we clean and beautify the Samakhusi area, promoting environmental awareness and community pride.</p>
+
+                    <span class="event-date">
+                        August 10, 2026
+                    </span>
+
+                    <h3>Treasure Hunt 2026</h3>
+
+                    <p>
+                        An exciting and engaging treasure hunt organized
+                        by Leo Club of Kathmandu Samakhusi.
+                    </p>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- ================= EVENT 2 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-book"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/cleanup-1.jpeg' %}"
+                         alt="Environmental Cleanup">
+
+                    <img src="{% static 'site/images/events/cleanup-2.jpeg' %}"
+                         alt="Environmental Cleanup">
+
+                    <img src="{% static 'site/images/events/cleanup-3.jpeg' %}"
+                         alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-4.jpeg' %}"
+                         alt="Environmental Cleanup">
+                    <img src="{% static 'site/images/events/cleanup-5.jpeg' %}"
+                         alt="Environmental Cleanup">
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">September 22</span>
-                    <h3>Educational Scholarship Program</h3>
-                    <p>Distribution of scholarships to deserving students and mentoring sessions with professionals in various fields.</p>
+
+                    <span class="event-date">
+                        July 25, 2026
+                    </span>
+
+                    <h3>Hiking and Cleanup </h3>
+
+                    <p>
+                        A community cleanup initiative where our Leo
+                        members worked together to make our surroundings
+                        cleaner and better.
+                    </p>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- ================= EVENT 3 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-heartbeat"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/health-1.jpeg' %}"
+                         alt="Health Awareness Program">
+
+                    <img src="{% static 'site/images/events/health-2.jpeg' %}"
+                         alt="Health Awareness Program">
+
+                    <img src="{% static 'site/images/events/health-3.jpeg' %}"
+                         alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-4.jpeg' %}"
+                         alt="Health Awareness Program">
+                    <img src="{% static 'site/images/events/health-5.jpeg' %}"
+                         alt="Health Awareness Program">
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">October 1</span>
-                    <h3>Health Awareness Campaign</h3>
-                    <p>Free health checkups, medical consultations, and awareness sessions on preventive health measures.</p>
+
+                    <span class="event-date">
+                        July 15, 2026
+                    </span>
+
+                    <h3>Emotional Awareness Program</h3>
+
+                    <p>
+                        An initiative focused on spreading awareness
+                        about health and well-being in our community.
+                    </p>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- ================= EVENT 4 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-people-carry"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/outreach-1.jpeg' %}"
+                         alt="Community Outreach">
+
+                    <img src="{% static 'site/images/events/outreach-2.jpeg' %}"
+                         alt="Community Outreach">
+
+                    <img src="{% static 'site/images/events/outreach-3.jpeg' %}"
+                         alt="Community Outreach">
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">October 10</span>
-                    <h3>Community Outreach Program</h3>
-                    <p>Supporting vulnerable communities with essential supplies and mentoring programs for youth development.</p>
+
+                    <span class="event-date">
+                        June 28, 2026
+                    </span>
+
+                    <h3>Blood Donation Program</h3>
+
+                    <p>
+                        Leo members came together to support the community
+                        through service and outreach activities.
+                    </p>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- ================= EVENT 5 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-laugh-beam"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/fellowship-1.jpeg' %}"
+                         alt="Leo Fellowship">
+
+                    <img src="{% static 'site/images/events/fellowship-2.jpeg' %}"
+                         alt="Leo Fellowship">
+
+                    <img src="{% static 'site/images/events/fellowship-3.jpeg' %}"
+                         alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-4.jpeg' %}"
+                         alt="Leo Fellowship">
+                    <img src="{% static 'site/images/events/fellowship-5.jpeg' %}"
+                         alt="Leo Fellowship">
+
+
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">October 18</span>
-                    <h3>Fun & Fellowship Event</h3>
-                    <p>Team building activities, games, and cultural celebrations to strengthen bonds among our club members.</p>
+
+                    <span class="event-date">
+                        June 15, 2026
+                    </span>
+
+                    <h3>Friendly Cricksal Program</h3>
+
+                    <p>
+                        A fun and memorable fellowship event that brought
+                        our members together and strengthened our bond.
+                    </p>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- ================= EVENT 6 ================= -->
+
             <div class="event-card">
-                <div class="event-image">
-                    <i class="fas fa-landmark"></i>
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/leadership-1.jpeg' %}"
+                         alt="Leadership Development">
+
+                    <img src="{% static 'site/images/events/leadership-2.jpeg' %}"
+                         alt="Leadership Development">
+
+                    <img src="{% static 'site/images/events/leadership-3.jpeg' %}"
+                         alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-4.jpeg' %}"
+                         alt="Leadership Development">
+                    <img src="{% static 'site/images/events/leadership-5.jpeg' %}"
+                         alt="Leadership Development">
+
                 </div>
+
                 <div class="event-content">
-                    <span class="event-date">October 25</span>
-                    <h3>Heritage Preservation Drive</h3>
-                    <p>Restoration and maintenance of historical sites in Kathmandu, preserving our cultural heritage for future generations.</p>
+
+                    <span class="event-date">
+                        June 5, 2026
+                    </span>
+
+                    <h3>Management of Unclaimed Bodies </h3>
+
+                    <p>
+                        An initiative designed to take care of the bodies that are not identified or claimed.
+                    </p>
+
                 </div>
+
             </div>
+
+
+            <!-- ================= EVENT 7 ================= -->
+
+            <div class="event-card">
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/service-1.jpeg' %}"
+                         alt="Social Service">
+
+                    <img src="{% static 'site/images/events/service-2.jpeg' %}"
+                         alt="Social Service">
+
+                    <img src="{% static 'site/images/events/service-3.jpeg' %}"
+                         alt="Social Service">
+                    <img src="{% static 'site/images/events/service-4.jpeg' %}"
+                         alt="Social Service">
+                    <img src="{% static 'site/images/events/service-5.jpeg' %}"
+                         alt="Social Service">
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-date">
+                        May 25, 2026
+                    </span>
+
+                    <h3>Park cleaning</h3>
+
+                    <p>
+                        A service initiative where our members worked
+                        together to create a positive impact in the
+                        community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="event-card">
+
+                <div class="event-gallery">
+
+                    <img src="{% static 'site/images/events/sports1.jpeg' %}"
+                         alt="Leadership Development">
+
+                    <img src="{% static 'site/images/events/sports2.jpeg' %}"
+                         alt="Leadership Development">
+
+                    <img src="{% static 'site/images/events/sports3.png' %}"
+                         alt="Leadership Development">
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-date">
+                        June 5, 2026
+                    </span>
+
+                    <h3>Leo Sports Fest 2026 </h3>
+
+                    <p>
+                       An event for all leo members to enjoy and relax
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 </section>
 
+
+
 <!-- ============ MEMBERS SECTION ============ -->
 <section id="members">
     <div class="container-fluid">
+
         <div class="section-title">
-            <h2>Our 2026–27 Club Team</h2>
-            <p>32 members. One team. One purpose — service, leadership and friendship.</p>
+            <h2>Our 2026-27 Club Team</h2>
+            <p>Our team united by service, leadership and friendship.</p>
         </div>
 
-        <div class="members-summary">
-            <span><strong>32</strong> Members</span>
-            <span><strong>12</strong> Leadership Roles</span>
-            <span>Leo Club Kathmandu Samakhusi</span>
+
+        <!-- ==============================
+             1. OUR CLUB TEAM
+        =============================== -->
+
+        <div class="members-subsection">
+
+            <div class="members-subsection-title">
+                <h3>Our Club Team</h3>
+                <p>Leo Club of Kathmandu Samakhusi</p>
+            </div>
+
+            <div class="members-grid members-grid-large">
+
+                <!-- President -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/abiskar.jpeg' %}"
+                             alt="Leo Abiskar K.C.">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">01</span>
+                        <h3>Leo Abiskar K.C.</h3>
+                        <div class="member-position">President</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Immediate Pasr President -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/siddhartha.jpeg' %}"
+                             alt="Leo Pawan Awasthi">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">02</span>
+                        <h3>Leo Siddhartha Nepal</h3>
+                        <div class="member-position">Immediate Past President</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Vice President -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/pawan.jpeg' %}"
+                             alt="Leo Pawan Awasthi">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">03</span>
+                        <h3>Leo Pawan Awasthi</h3>
+                        <div class="member-position">Vice President</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Secretary -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/priya.jpeg' %}"
+                             alt="Leo Priya Yadav">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">04</span>
+                        <h3>Leo Priya Yadav</h3>
+                        <div class="member-position">Secretary</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Treasurer -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/aayush.jpeg' %}"
+                             alt="Leo Aayush Pandey">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">05</span>
+                        <h3>Leo Aayush Pandey</h3>
+                        <div class="member-position">Treasurer</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Membership Chair -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/kiran.jpeg' %}"
+                             alt="Leo Kiran Pd Kalauni">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">06</span>
+                        <h3>Leo Kiran Pd Kalauni</h3>
+                        <div class="member-position">Membership Chair</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Member 6 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/sangam.jpeg' %}"
+                             alt="Leo Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">07</span>
+                        <h3>Sangam Pandey</h3>
+                        <div class="member-position">Club Advisor</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Member 7 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/deepesh.png' %}"
+                             alt="Leo Deepesh Ghimire">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">08</span>
+                        <h3>Leo Deepesh Ghimire</h3>
+                        <div class="member-position">Honorable Member</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+            </div>
         </div>
 
-        <div class="members-grid members-grid-large">
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-tie"></i></div>
-                <div class="member-info">
-                    <span class="member-number">01</span>
-                    <h3> Leo Abiskar K.C.</h3>
-                    <div class="member-position">President</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-tie"></i></div>
-                <div class="member-info">
-                    <span class="member-number">02</span>
-                    <h3>Leo Pawan Awasthi</h3>
-                    <div class="member-position">Vice President</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-tie"></i></div>
-                <div class="member-info">
-                    <span class="member-number">03</span>
-                    <h3>Leo Priya Yadav</h3>
-                    <div class="member-position">Secretary</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-face-smile"></i></div>
-                <div class="member-info">
-                    <span class="member-number">04</span>
-                    <h3>Leo Aayush Pandey</h3>
-                    <div class="member-position">Treasurer</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-group"></i></div>
-                <div class="member-info">
-                    <span class="member-number">05</span>
-                    <h3>Leo Kiran Pd Kalauni</h3>
-                    <div class="member-position">Membership Chair</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-laptop-code"></i></div>
-                <div class="member-info">
-                    <span class="member-number">06</span>
-                    <h3>Leo Kripan Khadka</h3>
-                    <div class="member-position">IT Head</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-tie"></i></div>
-                <div class="member-info">
-                    <span class="member-number">07</span>
-                    <h3>Leo Deepesh Ghimire</h3>
-                    <div class="member-position">Joint Secretary</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-clipboard-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">08</span>
-                    <h3>Leo Mahesh Datt Joshi</h3>
-                    <div class="member-position">Club Administrator</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user-tie"></i></div>
-                <div class="member-info">
-                    <span class="member-number">09</span>
-                    <h3>Leo Hem Raj Awasthi</h3>
-                    <div class="member-position">Club Director</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-futbol"></i></div>
-                <div class="member-info">
-                    <span class="member-number">10</span>
-                    <h3>Leo Rohit Pandey</h3>
-                    <div class="member-position">Sports & ECA Chair</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-hashtag"></i></div>
-                <div class="member-info">
-                    <span class="member-number">11</span>
-                    <h3>Leo  Prabin Joshi</h3>
-                    <div class="member-position">Social Media Chair</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-globe"></i></div>
-                <div class="member-info">
-                    <span class="member-number">12</span>
-                    <h3>Leo Ujjwal Bhatta</h3>
-                    <div class="member-position">International Service Chair</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">13</span>
-                    <h3>Leo Mukesh Pandey</h3>
-                    <div class="member-position">Tail Twister</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">14</span>
-                    <h3>Leo Abhishek Paudel</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">15</span>
-                    <h3>Leo Ronak Karki</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">16</span>
-                    <h3>Leo Basant Bist</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">17</span>
-                    <h3>Leo Ekta Jha</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">18</span>
-                    <h3>Member Name 18</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">19</span>
-                    <h3>Leo Pratiksha Thapa</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">20</span>
-                    <h3>Leo Uzwal Thakur</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">21</span>
-                    <h3>Leo Biswash Tiwari</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">22</span>
-                    <h3>Member Name 22</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">23</span>
-                    <h3>Member Name 23</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">24</span>
-                    <h3>Member Name 24</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">25</span>
-                    <h3>Member Name 25</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">26</span>
-                    <h3>Member Name 26</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">27</span>
-                    <h3>Member Name 27</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">28</span>
-                    <h3>Member Name 28</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">29</span>
-                    <h3>Member Name 29</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">30</span>
-                    <h3>Member Name 30</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">31</span>
-                    <h3>Member Name 31</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
-            <article class="member-card">
-                <div class="member-image"><i class="fas fa-user"></i></div>
-                <div class="member-info">
-                    <span class="member-number">32</span>
-                    <h3>Member Name 32</h3>
-                    <div class="member-position">General Member</div>
-                    <p>Leo Club Kathmandu Samakhusi</p>
-                </div>
-            </article>
+
+        <!-- ==============================
+             2. LIONS OF SAMAKHUSI
+        =============================== -->
+
+        <div class="members-subsection">
+
+            <div class="members-subsection-title">
+                <h3>Lions of Samakhusi</h3>
+                <p>Our Lions family supporting and guiding the club</p>
+            </div>
+
+            <div class="members-grid">
+
+                <!-- Lion 1 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/lion president.jpeg' %}"
+                             alt="Lion Name">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">01</span>
+                        <h3>Lion Jageshwor Yadav</h3>
+                        <div class="member-position">President</div>
+                        <p>Lions of Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Lion 2 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/lion 1st vice president.jpeg' %}"
+                             alt="Lion Name">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">02</span>
+                        <h3>Lion Madhav Prasad Khatiwada</h3>
+                        <div class="member-position">First Vice-President</div>
+                        <p>Lions of Samakhusi</p>
+                    </div>
+                </article>
+
+
+                <!-- Lion 3 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/lion secretary.jpeg' %}"
+                             alt="Lion Name">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">03</span>
+                        <h3>Lion Ramchandra Dhakal</h3>
+                        <div class="member-position">Secretary</div>
+                        <p>Lions of Samakhusi</p>
+                    </div>
+                </article>
+
+
+                 <!-- Lion 4 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/lion treasurer.jpeg' %}"
+                             alt="Lion Name">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">04</span>
+                        <h3>Lion Kunji Khatiwada</h3>
+                        <div class="member-position">Treasurer</div>
+                        <p>Lions of Samakhusi</p>
+                    </div>
+                </article>
+
+            </div>
         </div>
+
+
+        <!-- ==============================
+             3. DISTRICT MEMBERS
+        =============================== -->
+
+        <div class="members-subsection">
+
+            <div class="members-subsection-title">
+                <h3>District Members</h3>
+                <p>District 325 I, Nepal</p>
+            </div>
+
+            <div class="members-grid">
+
+                <!-- District Member 1 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/president.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">01</span>
+                        <h3>Leo-Lion Aamod Nepal</h3>
+                        <div class="member-position">District President</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+                <!-- District Member 2 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/ipp.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">02</span>
+                        <h3>Leo Er.Abhishek Subedi</h3>
+                        <div class="member-position">Immediate Past District President</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+                <!-- District Member 3 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/vice president.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">03</span>
+                        <h3>Leo Bibusha Basnet</h3>
+                        <div class="member-position">District Vice President</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+
+                 <!-- District Member 4 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/secretary.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">04</span>
+                        <h3>Leo Sankalpa Kunwar</h3>
+                        <div class="member-position"> District Secretary</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+
+                 <!-- District Member 5 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/treasurer.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">05</span>
+                        <h3>Leo Pratik Gautam</h3>
+                        <div class="member-position">District Treasurer</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+                 <!-- District Member 3 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/disrict membership chair.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">06</span>
+                        <h3>Leo Sandeep Lamichhane</h3>
+                        <div class="member-position">District Membership Chair</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+                 <!-- District Member 3 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/leo club chairman.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">07</span>
+                        <h3>Leo-Lion Sudan Lamichanne</h3>
+                        <div class="member-position">District CLub Chairman</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+
+                 <!-- District Member 3 -->
+                <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/regional co-ordinator(manaslu).jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">08</span>
+                        <h3>Leo Priyansha Acharya</h3>
+                        <div class="member-position">Regional Co-ordinator(Manaslu)</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+
+
+                  <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/chief district advisor.jpeg' %}"
+                             alt="District Member">
+                    </div>
+
+                    <div class="member-info">
+                        <span class="member-number">09</span>
+                        <h3>Leo-Lion Er.Manish Aryal</h3>
+                        <div class="member-position">Chief District Advisor</div>
+                        <p>District 325 I, Nepal</p>
+                    </div>
+                </article>
+
+
+
+
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -652,32 +1005,22 @@
                     </div>
                 </div>
             </div>
-            
-            <form class="contact-form" method="POST" action="#contact">
-                <h3 style="color: #003d82; margin-bottom: 1.5rem;">Send us a Message</h3>
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Message</button>
-            </form>
+           
+            <article class="member-card">
+                    <div class="member-image">
+                        <img src="{% static 'site/images/members/kripan.jpeg' %}"
+                             alt="Leo kripan Khadka" >
+                    </div>
+
+                    <div class="member-info">
+                        <h3>Leo Kripan Khadka</h3>
+                        <div class="member-position">IT Head</div>
+                        <p>Leo Club Kathmandu Samakhusi</p>
+                    </div>
+                </article>
+
+
+
         </div>
     </div>
 </section>
@@ -688,7 +1031,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <img src="/static/site/images/leo-club-logo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
+                    <img src="/static/site/images/leologo.png" alt="Leo Club Logo" style="height: 50px; width: auto;">
                     <div>
                         <h4 style="margin: 0;">Leo Club of Kathmandu Samakhusi</h4>
                         <p style="font-size: 0.85rem; margin: 0; color: #ddd;">District 325 B1, Nepal</p>
