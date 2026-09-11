@@ -1,8 +1,10 @@
-/* Leo Club of Kathmandu Samakhusi - Professional Styling */
+/* Leo Club of Kathmandu Samakhusi - Compact Professional Styling */
 
 :root {
     --primary-blue: #003d82;
+    --navy-blue: #002b5b;
     --gold: #ffc107;
+    --gold-hover: #e5ad00;
     --light-gray: #f8f9fa;
     --dark-gray: #2c3e50;
     --text-gray: #555555;
@@ -17,101 +19,145 @@
 html, body {
     font-family: 'Raleway', sans-serif;
     color: var(--text-gray);
+    background: var(--light-gray);
+    line-height: 1.5;
+    font-size: 15px; /* Reduced base font size */
+}
+
+p {
+    font-size: 0.95rem; /* Reduced body text size */
     line-height: 1.6;
 }
 
+/* ============ HEADER & NAVIGATION (KEEP EXACTLY SAME) ============ */
 /* ============ HEADER & NAVIGATION ============ */
+
 header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #002147 100%);
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--navy-blue) !important;
+    width: 100% !important;
+    padding: 0.8rem 0 !important;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+.header-top, 
+header .container {
+    max-width: 100% !important; /* Spans full width across screen */
+    margin: 0 !important;
+    padding: 0 1.5rem !important; /* Controls padding from the absolute screen edges */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
 }
 
 .logo-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    margin-right: auto !important; /* Forces logo/title to lock hard left */
 }
 
 .logo-section img {
-    height: 60px;
-    width: auto;
+    height: 60px !important;
+    width: auto !important;
+    display: block;
 }
 
 .club-title {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .club-title h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--gold);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1.75rem !important;
+    font-weight: 800 !important;
+    color: var(--gold) !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
 }
 
 .club-title p {
-    font-size: 0.9rem;
-    color: #ddd;
-    margin: 0;
+    font-size: 0.9rem !important;
+    color: #ffffff !important;
+    opacity: 0.85;
+    margin: 4px 0 0 0 !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    padding: 0.4rem 0.2rem !important;
+    transition: color 0.2s ease-in-out !important;
+    white-space: nowrap !important;
 }
 
 nav a:hover {
-    background: var(--gold);
-    color: var(--primary-blue);
+    color: var(--gold) !important;
 }
 
-/* ============ HERO SECTION ============ */
+.btn-apply, 
+nav .btn-yellow,
+nav a[href*="contact"].btn-yellow {
+    background-color: var(--gold) !important;
+    color: var(--navy-blue) !important;
+    font-weight: 800 !important;
+    font-size: 0.95rem !important;
+    padding: 0.55rem 1.2rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    margin-left: 0.4rem !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.btn-apply:hover, 
+nav .btn-yellow:hover,
+nav a[href*="contact"].btn-yellow:hover {
+    background-color: var(--gold-hover) !important;
+    transform: translateY(-2px);
+}
+/* ============ HERO SECTION (SCALE DOWN) ============ */
+
 .hero {
     background: linear-gradient(rgba(0, 61, 130, 0.85), rgba(0, 61, 130, 0.85)), 
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23003d82;stop-opacity:1" /><stop offset="100%" style="stop-color:%23001a3a;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/></svg>');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 6rem 2rem;
-    text-align: center;
-    min-height: 500px;
+    padding: 4rem 1.5rem; /* Reduced padding */
+    min-height: 380px; /* Reduced overall height */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 750px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
+    font-size: 2.5rem; /* Reduced from 3.8rem */
+    font-weight: 800;
+    margin-bottom: 0.8rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -120,9 +166,9 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    line-height: 1.8;
+    font-size: 1.1rem; /* Reduced from 1.4rem */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .cta-buttons {
@@ -133,10 +179,10 @@ nav a:hover {
 }
 
 .btn {
-    padding: 0.8rem 2rem;
+    padding: 0.65rem 1.6rem; /* Scaled down padding */
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Reduced font size */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -152,7 +198,7 @@ nav a:hover {
 .btn-primary:hover {
     background: #ffb300;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
 }
 
 .btn-secondary {
@@ -166,20 +212,21 @@ nav a:hover {
     color: white;
 }
 
-/* ============ SECTIONS ============ */
+/* ============ SECTIONS & TITLES (COMPACT) ============ */
+
 section {
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem; /* Reduced section padding */
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.2rem; /* Reduced margin */
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced from 2.8rem */
     color: var(--primary-blue);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
 }
@@ -187,18 +234,19 @@ section {
 .section-title h2::after {
     content: '';
     display: block;
-    width: 100px;
-    height: 4px;
+    width: 60px; /* Slimmer indicator line */
+    height: 3px;
     background: var(--gold);
-    margin: 1rem auto 0;
+    margin: 0.6rem auto 0;
 }
 
 .section-title p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reduced from 1.25rem */
     color: var(--text-gray);
 }
 
-/* ============ ABOUT SECTION ============ */
+/* ============ ABOUT SECTION (COMPACT) ============ */
+
 #about {
     background: var(--light-gray);
 }
@@ -206,34 +254,35 @@ section {
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .about-content h3 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Reduced from 3rem */
     color: var(--primary-blue);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .about-content p {
     margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem; /* Reduced from 1.5rem */
+    line-height: 1.6;
 }
 
 .about-features {
     list-style: none;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
 }
 
 .about-features li {
-    padding: 0.8rem 0;
-    padding-left: 2rem;
+    padding: 0.5rem 0;
+    padding-left: 1.8rem;
     position: relative;
     color: var(--text-gray);
+    font-size: 0.95rem;
 }
 
 .about-features li::before {
@@ -242,66 +291,63 @@ section {
     left: 0;
     color: var(--gold);
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .about-image img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* ============ VALUES SECTION ============ */
+/* ============ VALUES SECTION (COMPACT) ============ */
+
 #values {
     background: white;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .value-card {
     background: var(--light-gray);
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced padding */
     border-radius: 8px;
     text-align: center;
-    transition: all 0.3s ease;
-    border-top: 4px solid var(--gold);
-}
-
-.value-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--gold);
 }
 
 .value-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem; /* Reduced icon size */
+    margin-bottom: 0.6rem;
 }
 
 .value-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Reduced heading */
     color: var(--primary-blue);
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .value-card p {
     color: var(--text-gray);
+    font-size: 0.9rem;
 }
 
-/* ============ EVENTS SECTION ============ */
+/* ============ EVENTS SECTION (COMPACT) ============ */
+
 #events {
     background: var(--light-gray);
 }
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -310,52 +356,67 @@ section {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .event-image {
     width: 100%;
-    height: 200px;
+    height: 160px; /* Reduced image height */
     background: linear-gradient(135deg, var(--primary-blue), var(--gold));
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2.2rem;
 }
 
 .event-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
 .event-date {
     display: inline-block;
     background: var(--gold);
     color: var(--primary-blue);
-    padding: 0.3rem 0.8rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .event-card h3 {
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
+    font-size: 1.15rem;
 }
 
 .event-card p {
     color: var(--text-gray);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* ============ MEMBERS SECTION ============ */
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.event-gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ============ MEMBERS SECTION (COMPACT) ============ */
 
 #members {
     background: white;
@@ -364,17 +425,17 @@ section {
 .members-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
-    max-width: 1280px;
+    gap: 1.2rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .members-summary {
-    max-width: 1280px;
-    margin: 0 auto 2rem;
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
     display: flex;
     justify-content: center;
-    gap: .8rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
 }
 
@@ -382,169 +443,100 @@ section {
     background: #f3f7fc;
     border: 1px solid #dce8f5;
     color: var(--primary-blue);
-    padding: .55rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 999px;
-    font-size: .85rem;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .members-summary strong {
     color: var(--gold);
 }
 
-
-/* ============ MEMBER CARD ============ */
-
 .member-card {
     background: #fff;
     border: 1px solid #e5ebf2;
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 18px rgba(0, 34, 70, .06);
+    box-shadow: 0 4px 12px rgba(0, 34, 70, .05);
 }
-
-.member-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-
-/* ============ MEMBER IMAGE ============ */
 
 .member-image {
-    width: 150px;
-    height: 150px;
-    margin: 1.5rem auto 0;      /* Centers the circular container inside the card */
-    border-radius: 50%;          /* Forces the rectangular container into a circle */
+    width: 110px; /* Reduced from 170px */
+    height: 110px; /* Reduced from 170px */
+    margin: 1.2rem auto 0;
+    border-radius: 50%;
     overflow: hidden;
     position: relative;
     background: #f3f7fc;
-    border: 3px solid var(--gold); /* Adds a clean gold accent border around the circle */
+    border: 2px solid var(--gold);
 }
 
 .member-image img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;           /* Prevents distortion */
-    object-position: center top; /* Focuses on the face/head area */
+    object-fit: cover;
+    object-position: center top;
 }
 
-
-/* ============ MEMBER INFORMATION ============ */
-
 .member-info {
-    padding: 1.15rem 1rem 1.25rem;
+    padding: 1rem 0.8rem 1.1rem;
     position: relative;
 }
 
 .member-number {
     position: absolute;
-    top: .7rem;
-    right: .8rem;
-    font-size: .72rem;
+    top: 0.5rem;
+    right: 0.6rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #9aa9b8;
 }
 
 .member-info h3 {
     color: var(--primary-blue);
-    margin-bottom: 0.3rem;
+    font-size: 1.05rem; /* Reduced font size */
+    margin-bottom: 0.2rem;
 }
 
 .member-position {
     color: red;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.88rem; /* Reduced font size */
+    margin-bottom: 0.4rem;
 }
 
 .member-info p {
     color: var(--text-gray);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
-
-/* ============ MEMBER SUBSECTIONS ============ */
-
 .members-subsection {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
 }
 
 .members-subsection-title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .members-subsection-title h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
     color: var(--primary-blue);
 }
 
 .members-subsection-title p {
     margin: 0;
     color: var(--text-gray);
+    font-size: 0.95rem;
 }
 
+/* ============ CONTACT SECTION (COMPACT) ============ */
 
-/* ============ TABLET ============ */
-
-@media (max-width: 1100px) {
-
-    .members-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-}
-
-
-/* ============ SMALL TABLET / MOBILE ============ */
-
-@media (max-width: 760px) {
-
-    .members-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-    }
-
-    .member-image {
-        aspect-ratio: 3 / 4;
-        height: auto;
-    }
-
-    .member-info {
-        padding: 1rem .8rem 1.1rem;
-    }
-
-    .member-info h3 {
-        font-size: 1rem;
-    }
-
-    .member-position {
-        font-size: .85rem;
-    }
-
-}
-
-
-/* ============ MOBILE ============ */
-
-@media (max-width: 480px) {
-
-    .members-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .member-image {
-        aspect-ratio: 3 / 4;
-    }
-
-}
-
-/* ============ CONTACT SECTION ============ */
 #contact {
     background: var(--light-gray);
 }
@@ -554,62 +546,65 @@ section {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
 .contact-info h3 {
     color: var(--primary-blue);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
 }
 
 .contact-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1.4rem;
     display: flex;
     gap: 1rem;
 }
 
 .contact-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--gold);
     min-width: 30px;
 }
 
 .contact-item h4 {
     color: var(--primary-blue);
-    margin-bottom: 0.3rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
 }
 
 .contact-item p {
     color: var(--text-gray);
+    font-size: 0.9rem;
 }
 
 .contact-form {
     background: white;
-    padding: 2rem;
+    padding: 1.6rem;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: var(--primary-blue);
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.65rem 0.8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: border-color 0.3s;
 }
 
@@ -622,28 +617,56 @@ section {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 90px;
 }
 
-/* ============ FOOTER ============ */
+/* ============ CARD HOVER ANIMATIONS ============ */
+
+.value-card, 
+.event-card, 
+.notice-card, 
+.about-content,
+.contact-form,
+.contact-info,
+.member-card {
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.3s ease !important;
+    will-change: transform, box-shadow;
+}
+
+.value-card:hover, 
+.event-card:hover, 
+.notice-card:hover,
+.about-content:hover,
+.contact-form:hover,
+.member-card:hover {
+    transform: translateY(-5px) scale(1.01) !important;
+    box-shadow: 0 8px 20px rgba(0, 39, 77, 0.12) !important;
+    border-color: var(--gold) !important;
+}
+
+/* ============ FOOTER (COMPACT) ============ */
+
 footer {
     background: linear-gradient(135deg, var(--primary-blue) 0%, #002147 100%);
     color: white;
-    padding: 3rem 2rem 1rem;
+    padding: 2.5rem 1.5rem 1rem;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-section h4 {
     color: var(--gold);
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-section ul {
@@ -651,12 +674,13 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .footer-section a {
     color: #ddd;
     text-decoration: none;
+    font-size: 0.9rem;
     transition: color 0.3s;
 }
 
@@ -666,151 +690,133 @@ footer {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
+    padding-top: 1.2rem;
     text-align: center;
     color: #aaa;
+    font-size: 0.85rem;
 }
 
 .footer-bottom p {
-    margin: 0.5rem 0;
+    margin: 0.4rem 0;
 }
 
-/* ============ RESPONSIVE ============ */
+/* ============ UTILITY CLASSES ============ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+
+.mt-1 { margin-top: 0.8rem; }
+.mt-2 { margin-top: 1.5rem; }
+.mt-3 { margin-top: 2.2rem; }
+
+.mb-1 { margin-bottom: 0.8rem; }
+.mb-2 { margin-bottom: 1.5rem; }
+.mb-3 { margin-bottom: 2.2rem; }
+
+/* ============ RESPONSIVE MEDIA QUERIES ============ */
+
+@media (max-width: 1100px) {
+    .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    nav ul {
+        gap: 0.8rem !important;
+    }
+    nav a {
+        font-size: 0.9rem !important;
+    }
+    .club-title h1 {
+        font-size: 1.5rem !important;
+    }
+}
+
 @media (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        gap: 1rem;
+    .header-top,
+    header .container {
+        flex-direction: column !important;
+        gap: 1rem !important;
     }
 
     nav ul {
-        justify-content: center;
-        gap: 1rem;
+        justify-content: center !important;
+        gap: 0.8rem !important;
+        flex-wrap: wrap !important;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .club-title h1 {
+        font-size: 1.5rem !important;
+        white-space: normal !important;
+        text-align: center;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .club-title p {
+        white-space: normal !important;
+        text-align: center;
     }
 
-    .about-container {
-        grid-template-columns: 1fr;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
 
+    .about-container,
     .contact-container {
         grid-template-columns: 1fr;
     }
 
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
+    .section-title h2 { font-size: 1.7rem; }
 
-    .cta-buttons {
-        flex-direction: column;
-    }
+    .cta-buttons { flex-direction: column; }
+    .btn { width: 100%; text-align: center; }
 
-    .btn {
-        width: 100%;
-        text-align: center;
+    .event-gallery,
+    .event-gallery img {
+        height: 150px;
     }
 }
 
-@media (max-width: 480px) {
-    section {
-        padding: 2rem 1rem;
+@media (max-width: 760px) {
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
     }
 
+    .member-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .member-info { padding: 0.8rem 0.5rem; }
+    .member-info h3 { font-size: 0.95rem; }
+    .member-position { font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    section { padding: 2rem 1rem; }
+
     .hero {
-        padding: 3rem 1rem;
+        padding: 2.5rem 1rem;
         min-height: auto;
     }
 
-    .club-title h1 {
-        font-size: 1.3rem;
+    nav a {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.9rem !important;
     }
 
-    nav a {
-        padding: 0.3rem 0.5rem;
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .value-card,
     .event-card,
     .member-card {
-        padding: 1rem;
-    }
-}
-
-/* ============ UTILITY ============ */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mt-3 { margin-top: 3rem; }
-
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-
-
-
-
-
-
-
-/* ==============================
-   EVENT GALLERY
-   ============================== */
-
-.event-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    height: 220px;
-    overflow: hidden;
-}
-
-.event-gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.event-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.event-card {
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .event-gallery {
-        height: 200px;
-    }
-
-    .event-gallery img {
-        height: 200px;
-    }
-}
-
-@media (max-width: 500px) {
-    .event-gallery {
-        height: 180px;
-    }
-
-    .event-gallery img {
-        height: 180px;
+        padding: 0.8rem;
     }
 }

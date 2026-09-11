@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Notices | Leo Club Kathmandu Samakhusi</title>
+    
+    <link rel="stylesheet" href="{% static 'site/css/leo-club.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy-primary: #002244;
+            --navy-dark: #00152b;
+            --gold-accent: #c5a059;
+            --gold-light: #f9f6f0;
+            --gray-bg: #f4f5f7;
+            --border-color: #d1d5db;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            color: var(--text-main); 
+            background: var(--gray-bg); 
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Navigation Header */
+        header { 
+            background: var(--navy-primary); 
+            color: #ffffff; 
+            padding: 1rem 0; 
+            border-bottom: 3px solid var(--gold-accent);
+        }
+
+        .header-wrap { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-block { display: flex; align-items: center; gap: 1rem; }
+        .brand-block img { height: 50px; width: auto; }
+        
+        .brand-text h1 { 
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem; 
+            font-weight: 700; 
+            color: #ffffff; 
+            letter-spacing: 0.02em;
+        }
+        
+        .brand-text p { 
+            font-size: 0.75rem; 
+            color: var(--gold-accent); 
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+        nav a { 
+            color: #d1d5db; 
+            text-decoration: none; 
+            font-weight: 500; 
+            padding: 0.4rem 0.75rem; 
+            border-radius: 4px; 
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active { color: #ffffff; background: rgba(255, 255, 255, 0.08); }
+
+        .apply-link {
+            background: var(--gold-accent) !important; 
+            color: var(--navy-dark) !important; 
+            font-weight: 600 !important;
+        }
+
+        /* Notice Banner */
+        .page-banner {
+            background: #ffffff;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .page-banner h2 { 
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem; 
+            color: var(--navy-primary); 
+            margin-bottom: 0.4rem; 
+        }
+
+        .page-banner p { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+        }
+
+        /* Notices Container */
+        .content-area { padding: 3rem 0; }
+
+        .notice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Professional Notice Card */
+        .notice-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2rem;
+            border-left: 4px solid var(--navy-primary);
+        }
+
+        .notice-card.urgent {
+            border-left-color: #b91c1c;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--navy-primary);
+            background: var(--gold-light);
+            padding: 0.25rem 0.6rem;
+            border: 1px solid #e5decf;
+            border-radius: 2px;
+        }
+
+        .tag.urgent {
+            color: #b91c1c;
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+
+        .date-str {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .notice-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--navy-primary);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .notice-content {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .card-footer {
+            margin-top: 1.25rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #f3f4f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .ref-code {
+            font-family: monospace;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        /* Site Footer */
+        footer { 
+            background: var(--navy-dark); 
+            color: #9ca3af; 
+            padding: 3rem 0 1.5rem; 
+            font-size: 0.85rem;
+        }
+
+        .footer-grid { 
+            display: flex; 
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            gap: 2rem; 
+            margin-bottom: 2rem; 
+        }
+
+        .footer-brand h4 { 
+            color: #ffffff; 
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links h4 { 
+            color: #ffffff; 
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem; 
+        }
+
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.4rem; }
+        .footer-links a { color: #9ca3af; text-decoration: none; }
+        .footer-links a:hover { color: #ffffff; }
+
+        .footer-bottom { 
+            border-top: 1px solid #1f2937; 
+            padding-top: 1.25rem; 
+            text-align: center; 
+            color: #6b7280; 
+        }
+
+        @media (max-width: 640px) {
+            .card-top, .card-footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .header-wrap { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="header-wrap">
+            <div class="brand-block">
+                <img src="/static/site/images/leologo.png" alt="Leo Club Logo">
+                <div class="brand-text">
+                    <h1>Leo Club Kathmandu Samakhusi</h1>
+                    <p>District 325 I, Nepal &bull; Club ID 84372</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/events/">Events</a></li>
+                    <li><a href="/join/">Get Involved</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/members/">Members</a></li>
+                    <li><a href="/notices/" class="active">Notices</a></li>
+                    <li>
+                        <a href="{% url 'membership_application' %}" class="apply-link">
+                            Apply Now
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE TITLE BANNER -->
+<div class="page-banner">
+    <div class="container">
+        <h2>Official Directives & Notices</h2>
+        <p>Formal communications issued by the Executive Board</p>
+    </div>
+</div>
+
+<!-- MAIN NOTICES CONTENT -->
+<section class="content-area">
+    <div class="container">
+        <div class="notice-list">
+            
+            <!-- Notice Document -->
+            <article class="notice-card urgent">
+                <div class="card-top">
+                    <span class="tag urgent">Official Announcement</span>
+                    <span class="date-str">September 12, 2026</span>
+                </div>
+                
+                <h3>Official Website Launching Ceremony</h3>
+                
+                <div class="notice-content">
+                    <p>Notice is hereby given regarding the official digital launch of the web portal for <strong>Leo Club Kathmandu Samakhusi</strong>. The inaugural proceedings will be conducted during the upcoming Lions (Samakhusi) Inaguration Ceremony under the presidency of the <strong>Lions' President</strong>.</p>
+                
+                <div class="card-footer">
+                    <span>Issuing Authority: Executive Board / IT Directorate</span>
+                    <span class="ref-code">Ref: LCK-2026/N-01</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="/static/site/images/leologo.png" alt="Leo Logo" style="height: 40px;">
+                <h4>Leo Club Kathmandu Samakhusi</h4>
+                <p>Leadership, Experience, Opportunity.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'notices' %}">Notices</a></li>
+                    <li><a href="{% url 'members' %}">Members</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Leo Club Kathmandu Samakhusi. All Rights Reserved.</p>
+            <p style="margin-top: 0.25rem;">Developed by Leo Kripan Khadka (IT Head)</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

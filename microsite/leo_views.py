@@ -18,6 +18,12 @@ def events(request):
 def join(request):
     return render(request, "site/leo-club-join.html")
 
+def notices(request):
+    return render(request, "site/leo-club-notices.html")
+
+def members(request):
+    return render(request, 'site/leo-club-members.html')
+
 
 def membership_application(request):
     if request.method == "POST":

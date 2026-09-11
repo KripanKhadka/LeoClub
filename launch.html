@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leo Club Kathmandu Samakhusi - Launch</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #06264a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content {
+            position: relative;
+            z-index: 5;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #f5c542;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        #countdown {
+            font-size: 100px;
+            font-weight: bold;
+            color: #f5c542;
+            margin: 20px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: #f5c542;
+            color: #06264a;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* CURTAINS */
+
+        .curtain {
+            position: fixed;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #8b0000;
+            z-index: 10;
+            transition: transform 2s ease;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+
+        /* Open curtains */
+
+        body.open .left {
+            transform: translateX(-100%);
+        }
+
+        body.open .right {
+            transform: translateX(100%);
+        }
+
+        .curtain-title {
+            position: fixed;
+            z-index: 20;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: opacity 1s ease;
+        }
+
+        body.open .curtain-title {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Curtains -->
+    <div class="curtain left"></div>
+    <div class="curtain right"></div>
+
+    <!-- Text on curtain -->
+    <div class="curtain-title">
+        LEO CLUB KATHMANDU SAMAKHUSI
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+
+        <h1>Leo Club Kathmandu Samakhusi</h1>
+
+        <p>Official Website Launch</p>
+
+        <div id="countdown">
+            READY?
+        </div>
+
+        <button id="launchButton" onclick="startLaunch()">
+            🚀 LAUNCH WEBSITE
+        </button>
+
+    </div>
+
+    <script>
+
+        function startLaunch() {
+
+            const countdown = document.getElementById("countdown");
+            const button = document.getElementById("launchButton");
+
+            let number = 5;
+
+            button.style.display = "none";
+
+            countdown.innerText = number;
+
+            const timer = setInterval(function () {
+
+                number--;
+
+                if (number > 0) {
+
+                    countdown.innerText = number;
+
+                } else {
+
+                    clearInterval(timer);
+
+                    countdown.innerText = "🎉 LAUNCHED!";
+
+                    /* Open curtains */
+                    document.body.classList.add("open");
+
+                    /* Go to website after curtains open */
+                    setTimeout(function () {
+
+                        window.location.href = "/";
+
+                    }, 2500);
+
+                }
+
+            }, 1000);
+        }
+
+    </script>
+
+</body>
+</html>

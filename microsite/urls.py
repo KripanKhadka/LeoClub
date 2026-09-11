@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from .leo_views import about, events, home, join, membership_application
+from .leo_views import about, events, home, join, membership_application, notices, members
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -11,6 +11,8 @@ urlpatterns = [
     path("events/", events, name="events"),
     path("join/", join, name="join"),
     path("join/apply/", membership_application, name="membership_application"),
+    path('notices/', notices, name='notices'),
+    path('members/',  members,name='members'),
 ]
 
 # Serves uploaded media locally during development
